@@ -22,7 +22,7 @@ public class FirstAutomatedTest {
         driver.navigate().to("https://duckduckgo.com/");
 
         driver.findElement(By.name("q")).sendKeys("JavaStart");
-        driver.findElement(By.name("q")).submit();
+        driver.findElement(By.name("q")).submit();//
 
         String pageTitle = driver.getTitle();
 
