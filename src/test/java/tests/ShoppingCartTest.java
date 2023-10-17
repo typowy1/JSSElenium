@@ -9,22 +9,22 @@ public class ShoppingCartTest extends TestBase {
 
     @Test
     public void asNotLoggedInUserIShallNotProceedToCheckout(){
-        LandingPage landingPage = new LandingPage(driver);
+        LandingPage landingPage = new LandingPage();
         landingPage.clickOnEnterStoreLink();
 
-        TopMenuPage topMenuPage = new TopMenuPage(driver);
+        TopMenuPage topMenuPage = new TopMenuPage();
         topMenuPage.clickOnFishLink();
 
-        FishListPage fishListPage = new FishListPage(driver);
+        FishListPage fishListPage = new FishListPage();
         fishListPage.clickOnAngelFishId();
 
-        AngelFishPage angelFishPage = new AngelFishPage(driver);
+        AngelFishPage angelFishPage = new AngelFishPage();
         angelFishPage.clickToAddToCartSmallAngelFish();
 
-        ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
+        ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
         shoppingCartPage.clickOnProceedToCheckoutButton();
 
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage();
         loginPage.isLoginButtonDisplayed();
 
         assertTrue(loginPage.isLoginButtonDisplayed());

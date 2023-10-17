@@ -1,9 +1,10 @@
 package page.objects;
 
-import org.openqa.selenium.WebDriver;
+import driver.manager.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import waits.WaitForElement;
 
 public class FishListPage {
 
@@ -11,14 +12,13 @@ public class FishListPage {
     // drugim z kolei bezpośrednim dzieckiem swojego rodzica a lub  a[href$='FI-SW-01']
     WebElement angelFishId;
 
-    private WebDriver driver;
 
-    public FishListPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this); //metoda do inicjalizowania elementow
+    public FishListPage() {
+        PageFactory.initElements(DriverManager.getWebDriver(), this); //metoda do inicjalizowania elementow
     }
 
     public void clickOnAngelFishId() {
+        WaitForElement.waitUntilElementIsClickable(angelFishId);
         angelFishId.click();
     }
 }
