@@ -34,12 +34,39 @@
             <version>5.4.1</version>
         </dependency>
 
+        <!-- do logowania testów -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.17.1</version>
         </dependency>
 
+<!--        Biblioteka pozwala na proste odczytywanie plików *.properties.-->
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>1.0.12</version>
+        </dependency>
+
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!-- do uruchamiania testów z poziomu  linii poleceń i  prostych raportów z wykonania testów.-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src\test\resources\all_tests_suite.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>${testSuite}</suiteXmlFile>-->
+<!--                        przydatne do uruchamiania z lini polecen np w jenkinsie
+                            mvn clean test -Dsurefire.suiteXmlFiles=src\test\resources\all_tests_suite.xml-->
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
