@@ -12,19 +12,18 @@ public class PositiveLoginTests extends TestBase {
 
     @Test
     public void asUserLoginUsingValidLoginAndPassword() {
+// zastosowany Fluent Interface
+
+//  Dla metod w Page Objectach, które powodują przejście na inną stronę zwracamy obiekt strony na którą przechodzimy
+//  Dla metod w Page Objectach, które nie powodują przejścia na inną stronę zwracamy aktualny obiekt strony, stosując słowo kluczowe this
 
         LandingPage landingPage = new LandingPage();
-        landingPage.clickOnEnterStoreLink();
-
-        TopMenuPage topMenuPage = new TopMenuPage();
-        topMenuPage.clickOnSignInLink();
-
-        LoginPage loginPage = new LoginPage();
-        loginPage.typeIntoUserNameField("j2ee");
-        loginPage.typeIntoPasswordField("j2ee");
-        loginPage.clickOnLoginButton();
-        FooterPage footerPage = new FooterPage();
-
-        assertTrue(footerPage.isBannerAfterLoginDisplayed());
+        landingPage
+                .clickOnEnterStoreLink()
+                .clickOnSignInLink()
+                .typeIntoUserNameField("j2ee")
+                .typeIntoPasswordField("j2ee")
+                .clickOnLoginButton()
+                .isBannerAfterLoginDisplayed();
     }
 }

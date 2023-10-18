@@ -21,5 +21,6 @@ public class ShoppingCartPage {
     public void clickOnProceedToCheckoutButton() {
         WaitForElement.waitUntilElementIsClickable(proceedToCheckoutButton);
         proceedToCheckoutButton.click();
+        logger.info("Clicked on proceedToCheckoutButton");
     }
 }

@@ -22,9 +22,10 @@ public class TopMenuPage {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
-    public void clickOnSignInLink() {
+    public LoginPage clickOnSignInLink() {
         WaitForElement.waitUntilElementIsClickable(signOnLink);
         signOnLink.click();
+        return new LoginPage();
     }
 
     public void clickOnFishLink() {
