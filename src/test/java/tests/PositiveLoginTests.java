@@ -13,7 +13,7 @@ public class PositiveLoginTests extends TestBase {
     @Test
     public void asUserLoginUsingValidLoginAndPassword() {
 // zastosowany Fluent Interface
-
+//jak stosowac:
 //  Dla metod w Page Objectach, które powodują przejście na inną stronę zwracamy obiekt strony na którą przechodzimy
 //  Dla metod w Page Objectach, które nie powodują przejścia na inną stronę zwracamy aktualny obiekt strony, stosując słowo kluczowe this
 
